@@ -3,7 +3,7 @@ import React from "react";
 import styles from './GuessInput.module.css';
 
 
-function GuessInput({ currentGuessList, setCurrentGuessList }) {
+function GuessInput({ currentGuessList, setCurrentGuessList, isGameOver }) {
 
 	console.log('guessList in guessInput - ' , currentGuessList)
 
@@ -54,6 +54,7 @@ function GuessInput({ currentGuessList, setCurrentGuessList }) {
 				autoCapitalize="characters"
 				required={true}
 				onChange={(event) => {handleChange(event)}}
+				disabled={isGameOver}
 				/>
 		</form>
 	)
@@ -61,4 +62,4 @@ function GuessInput({ currentGuessList, setCurrentGuessList }) {
 
 
 
-export default GuessInput;
+export default React.memo(GuessInput);
