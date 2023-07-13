@@ -8,11 +8,15 @@ export function checkGuess(guess, answer) {
   // dealt with this character (it's correct, or misplaced).
   const SOLVED_CHAR = '✓';
 
-  if (!guess) {
+  console.log(
+    'guess - ' , guess
+  )
+
+  if (typeof(guess) !== 'string') {
     return null;
   }
 
-  const guessChars = guess.toUpperCase().split('');
+  const guessChars = guess.split('');
   const answerChars = answer.split('');
 
   const result = [];
@@ -50,6 +54,6 @@ export function checkGuess(guess, answer) {
       status,
     };
   }
-
+  console.log('result - ' , result)
   return result;
 }
